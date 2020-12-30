@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Cory.RL_Crawler.Player
+namespace Cory.RL_Crawler.Controllers
 {
     /// <summary>
     /// Gets Input keys for our Player

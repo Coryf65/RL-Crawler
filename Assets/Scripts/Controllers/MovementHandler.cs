@@ -3,7 +3,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Cory.RL_Crawler.Player
+namespace Cory.RL_Crawler.Controllers
 {
     // using an attribute to require a RigidBody2D
     [RequireComponent(typeof(Rigidbody2D))]

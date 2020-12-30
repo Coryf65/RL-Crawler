@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Cory.RL_Crawler.Player
+namespace Cory.RL_Crawler.Controllers
 {
     [RequireComponent(typeof(SpriteRenderer))]
     public class RendererHandler : MonoBehaviour
