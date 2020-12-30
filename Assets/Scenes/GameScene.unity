@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 225293905}
   - component: {fileID: 225293906}
   - component: {fileID: 225293907}
+  - component: {fileID: 225293908}
   m_Layer: 0
   m_Name: assault_rifle
   m_TagString: Untagged
@@ -348,6 +349,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSortingOrder: 0
+--- !u!114 &225293908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225293904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d43ac4b29a32b845ae33a9722bcc08c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &285530545
 GameObject:
   m_ObjectHideFlags: 0
@@ -5648,6 +5661,36 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Cory.RL_Crawler.Controllers.WeaponController, Assembly-CSharp
         m_MethodName: AimWeapon
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  <OnShootButtonPressed>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 225293908}
+        m_TargetAssemblyTypeName: Cory.RL_Crawler.Weapons.Weapon, Assembly-CSharp
+        m_MethodName: Shoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  <OnShootButtonReleased>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 225293908}
+        m_TargetAssemblyTypeName: Cory.RL_Crawler.Weapons.Weapon, Assembly-CSharp
+        m_MethodName: StopShoot
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

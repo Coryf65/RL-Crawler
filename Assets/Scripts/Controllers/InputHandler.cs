@@ -13,11 +13,14 @@ namespace Cory.RL_Crawler.Controllers
     {
 
         private Camera mainCamera;
+        private bool shootButtonDown;
 
         // Unity Events, sends out a <Vector2>
         // showing to the inspector with this attribute
         [field: SerializeField]  public UnityEvent<Vector2> OnMovementKeyPressed { get; set; }
         [field: SerializeField]  public UnityEvent<Vector2> OnPointerPosisitonChanged { get; set; }
+        [field: SerializeField]  public UnityEvent OnShootButtonPressed { get; set; }
+        [field: SerializeField]  public UnityEvent OnShootButtonReleased { get; set; }
 
         private void Awake()
         {
@@ -28,6 +31,27 @@ namespace Cory.RL_Crawler.Controllers
         {
             GetMovementInput();
             GetPointerInput();
+            GetShootingInput();
+        }
+
+        private void GetShootingInput()
+        {
+            if (Input.GetAxisRaw("Fire1") > 0)
+            {
+                if (shootButtonDown == false) 
+                { 
+                    shootButtonDown = true; 
+                    OnShootButtonPressed?.Invoke();
+                }
+            } else
+            {
+                if (shootButtonDown == true) 
+                { 
+                    shootButtonDown = false; 
+                    OnShootButtonReleased?.Invoke();
+                }
+
+            }
         }
 
         private void GetPointerInput()
