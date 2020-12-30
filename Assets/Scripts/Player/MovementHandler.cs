@@ -1,6 +1,7 @@
 using Cory.RL_Crawler.ScriptableObjects;
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Cory.RL_Crawler.Player
 {
@@ -16,6 +17,9 @@ namespace Cory.RL_Crawler.Player
 
         [SerializeField] protected float currentVelocity = 3f;
         protected Vector2 movementDirection;
+
+        // events
+        [field: SerializeField] public UnityEvent<float> OnVelocityChanged { get; set; }
 
         private void Awake()
         {
@@ -51,7 +55,8 @@ namespace Cory.RL_Crawler.Player
         }
 
         private void FixedUpdate()
-        {           
+        {
+            OnVelocityChanged?.Invoke(currentVelocity);
             rigidbody2D.velocity = currentVelocity * movementDirection.normalized;
         }
     }
