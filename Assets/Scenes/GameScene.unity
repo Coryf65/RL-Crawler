@@ -595,4 +595,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb632c6869dc5242b5b72f601469f24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  <MovementData>k__BackingField: {fileID: 11400000, guid: 57be58088c75e344d8a19c3764726f5d, type: 2}
+  currentVelocity: 3
