@@ -1,4 +1,5 @@
 using Cory.RL_Crawler.Player;
+using Cory.RL_Crawler.Weapons;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,12 +9,18 @@ namespace Cory.RL_Crawler.Controllers
 {
     public class WeaponController : MonoBehaviour
     {
-
+        [SerializeField] protected Weapon weapon;
         [SerializeField] protected WeaponRenderer weaponRenderer;
         protected float aimAngle;
 
         private void Awake()
         {
+            AssignWeapon();
+        }
+
+        private void AssignWeapon()
+        {
+            weapon = GetComponentInChildren<Weapon>();
             weaponRenderer = GetComponentInChildren<WeaponRenderer>();
         }
 
@@ -30,8 +37,27 @@ namespace Cory.RL_Crawler.Controllers
 
         protected void AdjustWeaponRendering()
         {
-            weaponRenderer?.FlipSprite(aimAngle > 90 || aimAngle < -90);
-            weaponRenderer?.SortingOrder(aimAngle < 180 && aimAngle > 0);
+            if (weaponRenderer != null)
+            {
+                weaponRenderer.FlipSprite(aimAngle > 90 || aimAngle < -90);
+                weaponRenderer.SortingOrder(aimAngle < 180 && aimAngle > 0);
+            }
+        }
+
+        public void Shoot()
+        {
+            if (weapon != null)
+            {
+                weapon.TryToShoot();
+            }
+        }
+
+        public void StopShooting()
+        {
+            if (weapon != null)
+            {
+                weapon.StopShooting();
+            }
         }
     }
 }

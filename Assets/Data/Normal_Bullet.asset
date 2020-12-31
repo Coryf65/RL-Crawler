@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37bc53d5c2a40764ea3530a08ec5641c, type: 3}
+  m_Name: Normal_Bullet
+  m_EditorClassIdentifier: 
+  <bulletPrefab>k__BackingField: {fileID: 7395576807872033363, guid: f1550062987393140948263da58daf2c, type: 3}
+  <BulletSpeed>k__BackingField: 30
+  <Damage>k__BackingField: 1
+  <Friciton>k__BackingField: 0
+  <Bouncey>k__BackingField: 0
+  <Peircing>k__BackingField: 0
+  <IsRaycast>k__BackingField: 0
+  <KnockbackPower>k__BackingField: 6
+  <KnockbackDelay>k__BackingField: 0.1
+  <ImpactEffectObstacle>k__BackingField: {fileID: 0}
+  <ImpactEffectEntity>k__BackingField: {fileID: 0}
