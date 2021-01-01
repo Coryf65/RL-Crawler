@@ -114,6 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 802fbfd3db34f3948b1b266a38fe7855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <EnemyDataSO>k__BackingField: {fileID: 11400000, guid: 324dae0402cec2641b1ec3212a1f241f, type: 2}
   <Health>k__BackingField: 2
   <OnGetHit>k__BackingField:
     m_PersistentCalls:
@@ -406,7 +407,7 @@ MonoBehaviour:
   - {x: -0.2903068, y: -0.4804001, z: 0}
   m_ShapePathHash: -971724827
   m_Mesh: {fileID: 0}
-  m_InstanceId: 24106
+  m_InstanceId: 24754
 --- !u!1 &7117075323255356720
 GameObject:
   m_ObjectHideFlags: 0

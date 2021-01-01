@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd410ecae929ccd41b1b6df2cb648468, type: 3}
-  m_Name: PlayerMovementDataSO
+  m_Script: {fileID: 11500000, guid: 32cf6a95b7aef3e41a92e2c1e69cdc4e, type: 3}
+  m_Name: Enemy_Chort_Data
   m_EditorClassIdentifier: 
-  maxSpeed: 5
-  acceleration: 50
-  deacceleration: 50
+  <MaxHealth>k__BackingField: 3
+  <Damage>k__BackingField: 1
