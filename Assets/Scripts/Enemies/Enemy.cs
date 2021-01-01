@@ -1,4 +1,5 @@
 using Cory.RL_Crawler.ScriptableObjects;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,6 +16,9 @@ namespace Cory.RL_Crawler.Interfaces
         [field: SerializeField]
         public UnityEvent OnGetHit { get; set; }
 
+        [field: SerializeField]
+        public UnityEvent OnDeath { get; set; }
+
         private void Start()
         {
             Health = EnemyDataSO.MaxHealth;
@@ -28,8 +32,15 @@ namespace Cory.RL_Crawler.Interfaces
             
             if (Health <= 0)
             {
-                Destroy(gameObject);    
+                OnDeath?.Invoke();
+                StartCoroutine(WaitToDie()); // allows the sound to play on destroy
             }
+        }
+
+        IEnumerator WaitToDie()
+        {
+            yield return new WaitForSeconds(.55f);
+            Destroy(gameObject);
         }
     }
 }
