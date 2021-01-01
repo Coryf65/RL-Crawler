@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 7117075321412870433}
   - component: {fileID: 7117075321412870438}
   - component: {fileID: 7117075321412870439}
-  m_Layer: 7
+  - component: {fileID: 1783701772781478028}
+  m_Layer: 8
   m_Name: Enemy-Chort
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -84,6 +85,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!70 &1783701772781478028
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7117075321412870436}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.8, y: 1.2}
+  m_Direction: 0
 --- !u!1 &7117075323019151956
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,7 +377,7 @@ MonoBehaviour:
   - {x: -0.2903068, y: -0.4804001, z: 0}
   m_ShapePathHash: -971724827
   m_Mesh: {fileID: 0}
-  m_InstanceId: 18134
+  m_InstanceId: 22952
 --- !u!1 &7117075323255356720
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +388,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7117075323255356723}
   - component: {fileID: 7117075323255356722}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: MovementCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,6 +422,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.023265718, y: -0.46451956}
-  m_Size: {x: 0.5982284, y: 0.22603539}
+  m_Offset: {x: -0.023265699, y: -0.3104048}
+  m_Size: {x: 0.59822845, y: 0.53426486}
   m_Direction: 1
