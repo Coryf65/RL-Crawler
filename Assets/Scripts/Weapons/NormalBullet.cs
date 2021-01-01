@@ -1,3 +1,4 @@
+using Cory.RL_Crawler.Interfaces;
 using Cory.RL_Crawler.ScriptableObjects;
 using System;
 using System.Collections;
@@ -32,6 +33,10 @@ namespace Cory.RL_Crawler.Weapons
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
+            var hittable = collision.GetComponent<IHittable>();
+
+            hittable?.GetHit(BulletData.Damage, gameObject);
+
             if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
             {
                 HitObstacle();
@@ -45,6 +50,7 @@ namespace Cory.RL_Crawler.Weapons
         private void HitEnemy()
         {
             // hit enemy
+
         }
 
         private void HitObstacle()
