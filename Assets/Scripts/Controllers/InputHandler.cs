@@ -1,3 +1,4 @@
+using Cory.RL_Crawler.Interfaces;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ namespace Cory.RL_Crawler.Controllers
     /// <summary>
     /// Gets Input keys for our Player
     /// </summary>
-    public class InputHandler : MonoBehaviour
+    public class InputHandler : MonoBehaviour, IInputHandler
     {
 
         private Camera mainCamera;
@@ -17,10 +18,10 @@ namespace Cory.RL_Crawler.Controllers
 
         // Unity Events, sends out a <Vector2>
         // showing to the inspector with this attribute
-        [field: SerializeField]  public UnityEvent<Vector2> OnMovementKeyPressed { get; set; }
-        [field: SerializeField]  public UnityEvent<Vector2> OnPointerPosisitonChanged { get; set; }
-        [field: SerializeField]  public UnityEvent OnShootButtonPressed { get; set; }
-        [field: SerializeField]  public UnityEvent OnShootButtonReleased { get; set; }
+        [field: SerializeField] public UnityEvent<Vector2> OnMovementKeyPressed { get; set; }
+        [field: SerializeField] public UnityEvent<Vector2> OnPointerPosisitonChanged { get; set; }
+        [field: SerializeField] public UnityEvent OnShootButtonPressed { get; set; }
+        [field: SerializeField] public UnityEvent OnShootButtonReleased { get; set; }
 
         private void Awake()
         {
@@ -38,16 +39,17 @@ namespace Cory.RL_Crawler.Controllers
         {
             if (Input.GetAxisRaw("Fire1") > 0)
             {
-                if (shootButtonDown == false) 
-                { 
-                    shootButtonDown = true; 
+                if (shootButtonDown == false)
+                {
+                    shootButtonDown = true;
                     OnShootButtonPressed?.Invoke();
                 }
-            } else
+            }
+            else
             {
-                if (shootButtonDown == true) 
-                { 
-                    shootButtonDown = false; 
+                if (shootButtonDown == true)
+                {
+                    shootButtonDown = false;
                     OnShootButtonReleased?.Invoke();
                 }
 

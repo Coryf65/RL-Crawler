@@ -1,8 +1,4 @@
-using Cory.RL_Crawler.Player;
 using Cory.RL_Crawler.Weapons;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Cory.RL_Crawler.Controllers

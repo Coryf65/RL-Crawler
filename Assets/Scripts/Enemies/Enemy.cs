@@ -1,11 +1,12 @@
+using Cory.RL_Crawler.Interfaces;
 using Cory.RL_Crawler.ScriptableObjects;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Cory.RL_Crawler.Interfaces
+namespace Cory.RL_Crawler.Enemies
 {
-    public class Enemy : MonoBehaviour, IHittable
+    public class Enemy : MonoBehaviour, IHittable, IEntity
     {
         [field: SerializeField]
         public EnemyData_SO EnemyDataSO { get; set; }
@@ -29,7 +30,7 @@ namespace Cory.RL_Crawler.Interfaces
             Health--;
 
             OnGetHit?.Invoke();
-            
+
             if (Health <= 0)
             {
                 OnDeath?.Invoke();
