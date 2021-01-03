@@ -141,9 +141,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pitchRandomizer: 0.03
-  hitClip: {fileID: 0}
-  deathClip: {fileID: 0}
-  voiceLineClip: {fileID: 0}
+  hitClip: {fileID: 8300000, guid: 42cad709b678d294a85ef6233ca0cb69, type: 3}
+  deathClip: {fileID: 8300000, guid: ecd0c917ab8cae248adb1b520700677c, type: 3}
+  voiceLineClip: {fileID: 8300000, guid: c6f57699b51a56a408975d8c0c5f763e, type: 3}
 --- !u!1 &5108059804497618537
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,6 +329,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2a1b7fdd230d4bafa92ddbff8c61e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Health>k__BackingField: 10
+  <OnDeath>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1410302622638291460}
+        m_TargetAssemblyTypeName: Cory.RL_Crawler.Audio.EntitySounds, Assembly-CSharp
+        m_MethodName: PlayDeathClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  <OnGetHit>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1410302622638291460}
+        m_TargetAssemblyTypeName: Cory.RL_Crawler.Audio.EntitySounds, Assembly-CSharp
+        m_MethodName: PlayHitSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5108059804783924521
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,7 +827,7 @@ MonoBehaviour:
   - {x: -0.309202, y: 0.50013316, z: 0}
   m_ShapePathHash: -231332599
   m_Mesh: {fileID: 0}
-  m_InstanceId: 18952
+  m_InstanceId: 26240
 --- !u!1 &5108059805727510207
 GameObject:
   m_ObjectHideFlags: 0

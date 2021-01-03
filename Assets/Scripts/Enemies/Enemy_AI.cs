@@ -39,8 +39,10 @@ namespace Cory.RL_Crawler.Enemies
             if (Target == null)
             {
                 OnMovementKeyPressed?.Invoke(Vector2.zero);
+            } else
+            {
+                CurrentState.UpdateState();
             }
-            CurrentState.UpdateState();
         }
 
         public void Attack()

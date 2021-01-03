@@ -15,10 +15,24 @@ namespace Cory.RL_Crawler.Enemies
         public int Health { get; private set; } = 2;
 
         [field: SerializeField]
+        public EnemyAttack enemyAttack { get; set; }
+
+        [field: SerializeField]
+        private bool dead = false;
+
+        [field: SerializeField]
         public UnityEvent OnGetHit { get; set; }
 
         [field: SerializeField]
         public UnityEvent OnDeath { get; set; }
+
+        private void Awake()
+        {
+            if (enemyAttack == null)
+            {
+                enemyAttack = GetComponent<EnemyAttack>();
+            }
+        }
 
         private void Start()
         {
@@ -27,12 +41,15 @@ namespace Cory.RL_Crawler.Enemies
 
         public void GetHit(int damage, GameObject damageDealer)
         {
-            Health--;
 
+            if (dead) { return; }
+
+            Health--;
             OnGetHit?.Invoke();
 
             if (Health <= 0)
             {
+                dead = true;
                 OnDeath?.Invoke();
                 StartCoroutine(WaitToDie()); // allows the sound to play on destroy
             }
@@ -43,5 +60,14 @@ namespace Cory.RL_Crawler.Enemies
             yield return new WaitForSeconds(.55f);
             Destroy(gameObject);
         }
+
+        public void PerformAttack()
+        {
+            if (!dead)
+            {
+                enemyAttack.Attack(EnemyDataSO.Damage);
+            }
+        }
+        
     }
 }

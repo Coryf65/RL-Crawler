@@ -249,8 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696593de683f9384ba70ecbe8110e53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Desicions>k__BackingField:
-  - {fileID: 5010421113176940207}
+  <Decisions>k__BackingField: []
   <PositiveResult>k__BackingField: {fileID: 0}
   <NegativeResult>k__BackingField: {fileID: 45460618646587949}
 --- !u!114 &5010421113176940207
@@ -373,8 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696593de683f9384ba70ecbe8110e53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Desicions>k__BackingField:
-  - {fileID: 960547439055725505}
+  <Decisions>k__BackingField: []
   <PositiveResult>k__BackingField: {fileID: 0}
   <NegativeResult>k__BackingField: {fileID: 4011112674472406790}
 --- !u!114 &6107291225080778742
@@ -498,8 +496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696593de683f9384ba70ecbe8110e53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Desicions>k__BackingField:
-  - {fileID: 960547439055725505}
+  <Decisions>k__BackingField: []
   <PositiveResult>k__BackingField: {fileID: 4011112674472406790}
   <NegativeResult>k__BackingField: {fileID: 0}
 --- !u!114 &960547439055725505
@@ -559,8 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696593de683f9384ba70ecbe8110e53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Desicions>k__BackingField:
-  - {fileID: 532496500579075693}
+  <Decisions>k__BackingField: []
   <PositiveResult>k__BackingField: {fileID: 6909982221393340403}
   <NegativeResult>k__BackingField: {fileID: 0}
 --- !u!114 &532496500579075693
@@ -590,6 +586,7 @@ GameObject:
   - component: {fileID: 1783701772781478028}
   - component: {fileID: 3046477310958535337}
   - component: {fileID: 5678577151639163562}
+  - component: {fileID: 8248047023790459469}
   m_Layer: 8
   m_Name: Enemy-Chort
   m_TagString: Player
@@ -695,6 +692,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <EnemyDataSO>k__BackingField: {fileID: 11400000, guid: 324dae0402cec2641b1ec3212a1f241f, type: 2}
   <Health>k__BackingField: 2
+  <enemyAttack>k__BackingField: {fileID: 0}
+  dead: 0
   <OnGetHit>k__BackingField:
     m_PersistentCalls:
       m_Calls:
@@ -783,10 +782,35 @@ MonoBehaviour:
         m_CallState: 2
   <OnShootButtonPressed>k__BackingField:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3046477310958535337}
+        m_TargetAssemblyTypeName: Cory.RL_Crawler.Enemies.Enemy, Assembly-CSharp
+        m_MethodName: PerformAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   <OnShootButtonReleased>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8248047023790459469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7117075321412870436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75a5f3ca9b46a5749836789d006f3502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <AttackDelay>k__BackingField: 1
 --- !u!1 &7117075323019151956
 GameObject:
   m_ObjectHideFlags: 0
@@ -1063,7 +1087,7 @@ MonoBehaviour:
   - {x: -0.2903068, y: -0.4804001, z: 0}
   m_ShapePathHash: -971724827
   m_Mesh: {fileID: 0}
-  m_InstanceId: 20430
+  m_InstanceId: 24946
 --- !u!1 &7117075323255356720
 GameObject:
   m_ObjectHideFlags: 0
