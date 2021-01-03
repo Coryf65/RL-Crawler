@@ -7,7 +7,7 @@ namespace Cory.RL_Crawler.AI
     public class AI_Transition : MonoBehaviour
     {
         [field: SerializeField]
-        public List<AI_Desicion> Desicions { get; set; }
+        public List<AI_Desicion> Decisions { get; set; }
 
         // The state we transition to
         [field: SerializeField]
@@ -16,5 +16,12 @@ namespace Cory.RL_Crawler.AI
         // what we do if one of those descicison fail
         [field: SerializeField]
         public AI_State NegativeResult { get; set; }
+
+        private void Awake()
+        {
+            // find all decsisions attached
+            Decisions.Clear();
+            Decisions = new List<AI_Desicion>(GetComponents<AI_Desicion>());
+        }
     }
 }

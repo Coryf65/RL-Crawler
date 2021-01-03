@@ -34,7 +34,7 @@ namespace Cory.RL_Crawler.AI
 
                 bool result = false;
 
-                foreach (var desicion in transition.Desicions)
+                foreach (var desicion in transition.Decisions)
                 {
                     result = desicion.MakeADescison();
                     if (result == false) { break; }

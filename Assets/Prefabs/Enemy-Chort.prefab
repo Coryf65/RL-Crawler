@@ -315,6 +315,7 @@ MonoBehaviour:
   aI_Actions:
   - {fileID: 104729295403306211}
   aI_Transitions:
+  - {fileID: 802664101603737374}
   - {fileID: 4831961314174627916}
 --- !u!114 &104729295403306211
 MonoBehaviour:
@@ -338,6 +339,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9019356573773880209}
   - component: {fileID: 4615731184067351723}
+  - component: {fileID: 6107291225080778742}
   m_Layer: 8
   m_Name: TransitionChase
   m_TagString: Untagged
@@ -371,9 +373,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696593de683f9384ba70ecbe8110e53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Desicions>k__BackingField: []
+  <Desicions>k__BackingField:
+  - {fileID: 960547439055725505}
   <PositiveResult>k__BackingField: {fileID: 0}
   <NegativeResult>k__BackingField: {fileID: 4011112674472406790}
+--- !u!114 &6107291225080778742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3673810505490350090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee0605d86f365047a065e893cb51194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Distance>k__BackingField: 0.8
 --- !u!1 &4219309941235939214
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,6 +525,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2648887076752713798}
   - component: {fileID: 802664101603737374}
+  - component: {fileID: 532496500579075693}
   m_Layer: 8
   m_Name: TransitionAttack
   m_TagString: Untagged
@@ -542,9 +559,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696593de683f9384ba70ecbe8110e53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Desicions>k__BackingField: []
+  <Desicions>k__BackingField:
+  - {fileID: 532496500579075693}
   <PositiveResult>k__BackingField: {fileID: 6909982221393340403}
   <NegativeResult>k__BackingField: {fileID: 0}
+--- !u!114 &532496500579075693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6122132064420454010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee0605d86f365047a065e893cb51194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Distance>k__BackingField: 0.8
 --- !u!1 &7117075321412870436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,7 +1063,7 @@ MonoBehaviour:
   - {x: -0.2903068, y: -0.4804001, z: 0}
   m_ShapePathHash: -971724827
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1406
+  m_InstanceId: 20430
 --- !u!1 &7117075323255356720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,6 +1121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6832785044523129383}
   - component: {fileID: 6909982221393340403}
+  - component: {fileID: 8597151734813120922}
   m_Layer: 8
   m_Name: AttackState
   m_TagString: Untagged
@@ -1124,6 +1156,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 151bd548cd791064aa2fc63afd83effe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aI_Actions: []
+  aI_Actions:
+  - {fileID: 8597151734813120922}
   aI_Transitions:
   - {fileID: 4615731184067351723}
+--- !u!114 &8597151734813120922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7870913692966095235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b631e6ac10a0973408e076b30ee36e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
