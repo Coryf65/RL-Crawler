@@ -315,7 +315,6 @@ MonoBehaviour:
   aI_Actions:
   - {fileID: 104729295403306211}
   aI_Transitions:
-  - {fileID: 802664101603737374}
   - {fileID: 4831961314174627916}
 --- !u!114 &104729295403306211
 MonoBehaviour:
@@ -483,7 +482,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696593de683f9384ba70ecbe8110e53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Desicions>k__BackingField: []
+  <Desicions>k__BackingField:
+  - {fileID: 960547439055725505}
   <PositiveResult>k__BackingField: {fileID: 4011112674472406790}
   <NegativeResult>k__BackingField: {fileID: 0}
 --- !u!114 &960547439055725505
@@ -1032,7 +1032,7 @@ MonoBehaviour:
   - {x: -0.2903068, y: -0.4804001, z: 0}
   m_ShapePathHash: -971724827
   m_Mesh: {fileID: 0}
-  m_InstanceId: 22386
+  m_InstanceId: -1406
 --- !u!1 &7117075323255356720
 GameObject:
   m_ObjectHideFlags: 0
