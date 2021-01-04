@@ -867,7 +867,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: d927b0754fa1c3042ab6a048041882c8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1087,7 +1087,7 @@ MonoBehaviour:
   - {x: -0.2903068, y: -0.4804001, z: 0}
   m_ShapePathHash: -971724827
   m_Mesh: {fileID: 0}
-  m_InstanceId: 24946
+  m_InstanceId: 21984
 --- !u!1 &7117075323255356720
 GameObject:
   m_ObjectHideFlags: 0
