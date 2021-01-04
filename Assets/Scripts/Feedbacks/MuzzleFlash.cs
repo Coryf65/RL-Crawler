@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
-namespace Cory.RL_Crawler.Feedback
+namespace Cory.RL_Crawler.Feedbacks
 {
-    public class MuzzleFlash : Feedbacks
+    public class MuzzleFlash : Feedback
     {
 
         [SerializeField] private Light2D lightTarget = null;

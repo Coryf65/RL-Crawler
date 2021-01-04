@@ -154,8 +154,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7263694128773155020}
   - component: {fileID: 8400482147154766696}
-  - component: {fileID: 3059292672939273369}
   - component: {fileID: 7100001354352313734}
+  - component: {fileID: 3059292672939273369}
   m_Layer: 0
   m_Name: FeedbackShooting
   m_TagString: Untagged
@@ -193,21 +193,6 @@ MonoBehaviour:
   lightOnDelay: 0.01
   lightOffDelay: 0.05
   defaultState: 0
---- !u!114 &3059292672939273369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3782634661332135276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69abfb6d1e75c2b4e94e30fceb0a1605, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  feedbackToPlay:
-  - {fileID: 8400482147154766696}
-  - {fileID: 7100001354352313734}
 --- !u!114 &7100001354352313734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,6 +212,83 @@ MonoBehaviour:
   randomness: 0
   snap: 0
   fadeOut: 1
+--- !u!114 &3059292672939273369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3782634661332135276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69abfb6d1e75c2b4e94e30fceb0a1605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  feedbackToPlay:
+  - {fileID: 8400482147154766696}
+  - {fileID: 7100001354352313734}
+--- !u!1 &4933951095571326153
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8989345022944708505}
+  - component: {fileID: 5178875018320550731}
+  - component: {fileID: 7171692500537650826}
+  m_Layer: 7
+  m_Name: FeedbackCameraShake
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8989345022944708505
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4933951095571326153}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5108059804497618536}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5178875018320550731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4933951095571326153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69abfb6d1e75c2b4e94e30fceb0a1605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  feedbackToPlay:
+  - {fileID: 7171692500537650826}
+--- !u!114 &7171692500537650826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4933951095571326153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df27151fc8af61d438dbc53600e60168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vCamera: {fileID: 0}
+  amplitude: 1
+  intensity: 1
+  duration: 0.1
 --- !u!1 &5108059804497618537
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,6 +324,7 @@ Transform:
   - {fileID: 5108059805365913227}
   - {fileID: 5108059806038130295}
   - {fileID: 1769610554164631948}
+  - {fileID: 8989345022944708505}
   - {fileID: 5108059805727510206}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -434,6 +497,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1410302622638291460}
         m_TargetAssemblyTypeName: Cory.RL_Crawler.Audio.EntitySounds, Assembly-CSharp
         m_MethodName: PlayHitSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5178875018320550731}
+        m_TargetAssemblyTypeName: Cory.RL_Crawler.Feedbacks.FeedbackPlayer, Assembly-CSharp
+        m_MethodName: PlayFeedback
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -908,7 +983,7 @@ MonoBehaviour:
   - {x: -0.31926528, y: 0.44646233, z: 0}
   m_ShapePathHash: -1928688415
   m_Mesh: {fileID: 0}
-  m_InstanceId: 45188
+  m_InstanceId: 55160
 --- !u!1 &5108059805727510207
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,7 +1014,7 @@ Transform:
   m_Children:
   - {fileID: 5108059806194136926}
   m_Father: {fileID: 5108059804497618536}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5108059805727510205
 MonoBehaviour:
