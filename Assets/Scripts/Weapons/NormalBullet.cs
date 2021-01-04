@@ -1,8 +1,5 @@
 using Cory.RL_Crawler.Interfaces;
 using Cory.RL_Crawler.ScriptableObjects;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Cory.RL_Crawler.Weapons
@@ -31,6 +28,10 @@ namespace Cory.RL_Crawler.Weapons
             }
         }
 
+        /// <summary>
+        /// When we hit something
+        /// </summary>
+        /// <param name="collision"></param>
         private void OnTriggerEnter2D(Collider2D collision)
         {
             var hittable = collision.GetComponent<IHittable>();
@@ -39,23 +40,41 @@ namespace Cory.RL_Crawler.Weapons
 
             if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
             {
-                HitObstacle();
+                HitObstacle(collision);
             }else if (collision.gameObject.layer == LayerMask.NameToLayer("Enemies"))
             {
-                HitEnemy();
+                HitEnemy(collision);
             }
             Destroy(gameObject);
         }
 
-        private void HitEnemy()
+        /// <summary>
+        /// Hit an Enemy
+        /// </summary>
+        /// <param name="collision"></param>
+        private void HitEnemy(Collider2D collision)
         {
-            // hit enemy
+            // creating hit effect, around Radius
+            float radius = 0.5f;
+            Vector2 randomOffset = Random.insideUnitCircle * radius;
 
+            Instantiate(BulletData.ImpactEffectEntity, collision.transform.position + (Vector3)randomOffset, Quaternion.identity);
         }
 
-        private void HitObstacle()
+        /// <summary>
+        /// Hit an Obstacle, using a RayCast
+        /// </summary>
+        /// <param name="collision"></param>
+        private void HitObstacle(Collider2D collision)
         {
-            // hit wall
+            // creating hit effect, at closest raycast to wall, our bullet is facing "Right" we rotate that sprite
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right);
+
+            if (hit.collider != null)
+            {
+                // point in world space
+                Instantiate(BulletData.ImpactEffectObstacle, hit.point, Quaternion.identity);
+            }
         }
     }
 }

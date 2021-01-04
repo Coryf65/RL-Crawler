@@ -21,5 +21,5 @@ MonoBehaviour:
   <IsRaycast>k__BackingField: 0
   <KnockbackPower>k__BackingField: 6
   <KnockbackDelay>k__BackingField: 0.1
-  <ImpactEffectObstacle>k__BackingField: {fileID: 0}
-  <ImpactEffectEntity>k__BackingField: {fileID: 0}
+  <ImpactEffectObstacle>k__BackingField: {fileID: 1029972089479872821, guid: 24ad805fe61d66543b77d63be83851fd, type: 3}
+  <ImpactEffectEntity>k__BackingField: {fileID: 2086318642536547674, guid: 825e0f5aaf5c52a47b2766cc9583523f, type: 3}
