@@ -6,7 +6,7 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 namespace Cory.RL_Crawler.Feedback
 {
-    public class MuzzleFlash : Feedback
+    public class MuzzleFlash : Feedbacks
     {
 
         [SerializeField] private Light2D lightTarget = null;
