@@ -10,5 +10,11 @@ namespace Cory.RL_Crawler.Feedback
         public abstract void CreateFeedback();
         
         public abstract void CompletePreviousFeedback();
+
+        protected virtual void OnDestroy()
+        {
+            // preventing calling coroutine on a object the is "Destroyed"
+            CompletePreviousFeedback();
+        }
     }
 }
