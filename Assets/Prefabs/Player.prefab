@@ -155,6 +155,7 @@ GameObject:
   - component: {fileID: 7263694128773155020}
   - component: {fileID: 8400482147154766696}
   - component: {fileID: 3059292672939273369}
+  - component: {fileID: 7100001354352313734}
   m_Layer: 0
   m_Name: FeedbackShooting
   m_TagString: Untagged
@@ -206,6 +207,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   feedbackToPlay:
   - {fileID: 8400482147154766696}
+  - {fileID: 7100001354352313734}
+--- !u!114 &7100001354352313734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3782634661332135276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 883ef5a53410a4947aaca43be79dbd4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToShake: {fileID: 5108059806194136927}
+  duration: 0.05
+  strength: 0.2
+  vibrato: 10
+  randomness: 0
+  snap: 0
+  fadeOut: 1
 --- !u!1 &5108059804497618537
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,7 +908,7 @@ MonoBehaviour:
   - {x: -0.31926528, y: 0.44646233, z: 0}
   m_ShapePathHash: -1928688415
   m_Mesh: {fileID: 0}
-  m_InstanceId: 41372
+  m_InstanceId: 45188
 --- !u!1 &5108059805727510207
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,7 +934,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5108059805727510207}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.26, z: 0}
+  m_LocalPosition: {x: 0, y: -0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5108059806194136926}
@@ -1031,7 +1052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
+  m_FalloffIntensity: 0.438
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 6
   m_LightVolumeOpacity: 0
@@ -1040,7 +1061,7 @@ MonoBehaviour:
   m_UseNormalMap: 0
   m_LightOrder: 0
   m_AlphaBlendOnOverlap: 0
-  m_ShadowIntensity: 1
+  m_ShadowIntensity: 0.6
   m_ShadowVolumeIntensity: 0
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
@@ -1157,8 +1178,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5108059806194136927}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.3844, y: 0, z: 0}
+  m_LocalScale: {x: 1.2, y: 1, z: 1}
   m_Children:
   - {fileID: 5108059805904530495}
   - {fileID: 5108059804783924520}
