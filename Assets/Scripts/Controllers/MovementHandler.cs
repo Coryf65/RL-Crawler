@@ -1,5 +1,6 @@
 using Cory.RL_Crawler.ScriptableObjects;
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -17,6 +18,7 @@ namespace Cory.RL_Crawler.Controllers
 
         [SerializeField] protected float currentVelocity = 3f;
         protected Vector2 movementDirection;
+        protected bool isKnockedback = false;
 
         // events
         [field: SerializeField] public UnityEvent<float> OnVelocityChanged { get; set; }
@@ -57,13 +59,47 @@ namespace Cory.RL_Crawler.Controllers
         private void FixedUpdate()
         {
             OnVelocityChanged?.Invoke(currentVelocity);
-            rigidbody2D.velocity = currentVelocity * movementDirection.normalized;
+
+            if (!isKnockedback)
+            {
+                rigidbody2D.velocity = currentVelocity * movementDirection.normalized;
+            }
+
         }
 
         public void StopMovement()
         {
             currentVelocity = 0;
             rigidbody2D.velocity = Vector2.zero;
+        }
+
+        public void Knockback(Vector2 direction, float power, float duration)
+        {
+            if (!isKnockedback)
+            {
+                isKnockedback = true;
+                StartCoroutine(KnockbackCoroutine(direction, power, duration));
+            }
+        }
+
+        public void ResetKnockback()
+        {         
+            StopCoroutine("KnockbackCoroutine");
+            currentVelocity = 0;
+            rigidbody2D.velocity = Vector2.zero;
+            isKnockedback = false;
+        }
+
+
+        IEnumerator KnockbackCoroutine(Vector2 direction, float power, float duration) 
+        {
+            rigidbody2D.AddForce(direction.normalized * power, ForceMode2D.Impulse);
+            
+            yield return new WaitForSeconds(duration);
+            
+            currentVelocity = 0;
+            rigidbody2D.velocity = Vector2.zero;
+            isKnockedback = false;
         }
     }
 }

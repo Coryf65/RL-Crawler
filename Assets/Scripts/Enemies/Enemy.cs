@@ -1,3 +1,4 @@
+using Cory.RL_Crawler.Controllers;
 using Cory.RL_Crawler.Interfaces;
 using Cory.RL_Crawler.ScriptableObjects;
 using System.Collections;
@@ -6,7 +7,7 @@ using UnityEngine.Events;
 
 namespace Cory.RL_Crawler.Enemies
 {
-    public class Enemy : MonoBehaviour, IHittable, IEntity
+    public class Enemy : MonoBehaviour, IHittable, IEntity, IKnockback
     {
         [field: SerializeField]
         public EnemyData_SO EnemyDataSO { get; set; }
@@ -19,6 +20,7 @@ namespace Cory.RL_Crawler.Enemies
 
         [field: SerializeField]
         private bool dead = false;
+        private MovementHandler movementHandler = null;
 
         [field: SerializeField]
         public UnityEvent OnGetHit { get; set; }
@@ -32,6 +34,8 @@ namespace Cory.RL_Crawler.Enemies
             {
                 enemyAttack = GetComponent<EnemyAttack>();
             }
+
+            movementHandler = GetComponent<MovementHandler>();
         }
 
         private void Start()
@@ -66,6 +70,10 @@ namespace Cory.RL_Crawler.Enemies
                 enemyAttack.Attack(EnemyDataSO.Damage);
             }
         }
-        
+
+        public void Knockback(Vector2 direction, float power, float duration)
+        {
+            movementHandler.Knockback(direction, power, duration);
+        }
     }
 }

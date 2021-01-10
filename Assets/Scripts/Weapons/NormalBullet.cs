@@ -59,6 +59,10 @@ namespace Cory.RL_Crawler.Weapons
         /// <param name="collision"></param>
         private void HitEnemy(Collider2D collision)
         {
+            // Do a knockback effect if needed
+            var knockback = collision.GetComponent<IKnockback>();
+            knockback?.Knockback(transform.right, BulletData.KnockbackPower, BulletData.KnockbackDelay);
+
             // creating hit effect, around Radius
             float radius = 0.5f;
             Vector2 randomOffset = Random.insideUnitCircle * radius;
