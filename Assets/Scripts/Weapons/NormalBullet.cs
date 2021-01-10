@@ -7,6 +7,7 @@ namespace Cory.RL_Crawler.Weapons
     public class NormalBullet : Bullet
     {
         protected Rigidbody2D rigidbody2D;
+        private bool isDead = false;
 
         public override BulletData_SO BulletData 
         { 
@@ -34,6 +35,10 @@ namespace Cory.RL_Crawler.Weapons
         /// <param name="collision"></param>
         private void OnTriggerEnter2D(Collider2D collision)
         {
+            if (isDead) { return; }
+
+            isDead = true;
+
             var hittable = collision.GetComponent<IHittable>();
 
             hittable?.GetHit(BulletData.Damage, gameObject);
