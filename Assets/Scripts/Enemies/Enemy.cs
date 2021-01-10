@@ -51,13 +51,11 @@ namespace Cory.RL_Crawler.Enemies
             {
                 dead = true;
                 OnDeath?.Invoke();
-                StartCoroutine(WaitToDie()); // allows the sound to play on destroy
             }
         }
 
-        IEnumerator WaitToDie()
+        public void Die()
         {
-            yield return new WaitForSeconds(.55f);
             Destroy(gameObject);
         }
 

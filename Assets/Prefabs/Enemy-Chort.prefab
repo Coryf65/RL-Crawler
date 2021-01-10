@@ -144,6 +144,81 @@ MonoBehaviour:
   hitClip: {fileID: 8300000, guid: 739174ccbca42d34c88579866c1e36aa, type: 3}
   deathClip: {fileID: 8300000, guid: 918d5cae1ca984a47abfda660d6ef771, type: 3}
   voiceLineClip: {fileID: 8300000, guid: 7e425c8c1ba7f3a49afb051e87677bf3, type: 3}
+--- !u!1 &1501210297769300217
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3621779649663805439}
+  - component: {fileID: 5122891583939855180}
+  - component: {fileID: 3641729506553934323}
+  m_Layer: 8
+  m_Name: FeedbackDeath
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3621779649663805439
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501210297769300217}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7117075321412870433}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5122891583939855180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501210297769300217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 067552e7c0d366c4cb725505aa071ccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 7117075323019151981}
+  duration: 0.7
+  <DeathCallback>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3046477310958535337}
+        m_TargetAssemblyTypeName: Cory.RL_Crawler.Enemies.Enemy, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3641729506553934323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501210297769300217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69abfb6d1e75c2b4e94e30fceb0a1605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  feedbackToPlay:
+  - {fileID: 5122891583939855180}
 --- !u!1 &2752571771449193058
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,7 +496,7 @@ Transform:
   - {fileID: 5639773283173529740}
   - {fileID: 6832785044523129383}
   m_Father: {fileID: 7117075321412870433}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6513650670281125078
 MonoBehaviour:
@@ -609,6 +684,7 @@ Transform:
   - {fileID: 7117075323255356723}
   - {fileID: 6426869829379210372}
   - {fileID: 2970048856587049176}
+  - {fileID: 3621779649663805439}
   - {fileID: 4381169013412335793}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -741,6 +817,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3641729506553934323}
+        m_TargetAssemblyTypeName: Cory.RL_Crawler.Feedbacks.FeedbackPlayer, Assembly-CSharp
+        m_MethodName: PlayFeedback
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1100,7 +1188,7 @@ MonoBehaviour:
   - {x: -0.2903068, y: -0.4804001, z: 0}
   m_ShapePathHash: -971724827
   m_Mesh: {fileID: 0}
-  m_InstanceId: 24338
+  m_InstanceId: 26736
 --- !u!1 &7117075323255356720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,7 +1343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 7117075323019151981}
   flashTime: 0.1
-  flashMatrial: {fileID: 2100000, guid: f20c398cfd034e0459344d2a66aa270d, type: 2}
+  flashMatrial: {fileID: 2100000, guid: bed67c1a4e4f3a24380eb9a9f0e1b80f, type: 2}
 --- !u!114 &6138071553585036982
 MonoBehaviour:
   m_ObjectHideFlags: 0
