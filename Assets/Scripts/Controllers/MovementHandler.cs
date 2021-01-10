@@ -59,5 +59,11 @@ namespace Cory.RL_Crawler.Controllers
             OnVelocityChanged?.Invoke(currentVelocity);
             rigidbody2D.velocity = currentVelocity * movementDirection.normalized;
         }
+
+        public void StopMovement()
+        {
+            currentVelocity = 0;
+            rigidbody2D.velocity = Vector2.zero;
+        }
     }
 }

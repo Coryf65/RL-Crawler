@@ -27,5 +27,10 @@ namespace Cory.RL_Crawler.Controllers
         {
             SetWalkAnimation(velocity > 0);
         }
+
+        public void PlayDeathAnimation()
+        {
+            animator.SetTrigger("Died");
+        }
     }
 }

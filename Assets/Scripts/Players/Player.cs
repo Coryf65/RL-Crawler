@@ -29,15 +29,9 @@ namespace Cory.RL_Crawler.Players
                 {
                     OnDeath?.Invoke();
                     dead = true;
-                    StartCoroutine(DeathCoroutine());
+                    // play death animation
                 }
             }
-        }
-
-        IEnumerator DeathCoroutine()
-        {
-            yield return new WaitForSeconds(0.2f);
-            Destroy(gameObject);
         }
     }
 }
