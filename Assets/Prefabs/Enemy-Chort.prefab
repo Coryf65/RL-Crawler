@@ -1100,7 +1100,7 @@ MonoBehaviour:
   - {x: -0.2903068, y: -0.4804001, z: 0}
   m_ShapePathHash: -971724827
   m_Mesh: {fileID: 0}
-  m_InstanceId: 22736
+  m_InstanceId: 21246
 --- !u!1 &7117075323255356720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,7 +1255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 7117075323019151981}
   flashTime: 0.1
-  flashMatrial: {fileID: 2100000, guid: 6442df0e157e06d4893b3d17c16d20d6, type: 2}
+  flashMatrial: {fileID: 2100000, guid: f20c398cfd034e0459344d2a66aa270d, type: 2}
 --- !u!114 &6138071553585036982
 MonoBehaviour:
   m_ObjectHideFlags: 0
