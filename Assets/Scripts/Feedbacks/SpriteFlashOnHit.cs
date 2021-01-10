@@ -27,11 +27,11 @@ namespace Cory.RL_Crawler.Feedbacks
 
         public override void CreateFeedback()
         {
-            if (spriteRenderer.material.HasProperty("MakeSolidColor") == false)
+            if (spriteRenderer.material.HasProperty("_MakeSolidColor") == false)
             {              
                 spriteRenderer.material.shader = flashMatrial.shader;
             }
-            spriteRenderer.material.SetInt("MakeSolidColor", 1);
+            spriteRenderer.material.SetInt("_MakeSolidColor", 1);
             StartCoroutine(WaitBeforeReturningToOriginalShader());
         }
 
@@ -39,9 +39,9 @@ namespace Cory.RL_Crawler.Feedbacks
         {
             yield return new WaitForSeconds(flashTime);
 
-            if (spriteRenderer.material.HasProperty("MakeSolidColor"))
+            if (spriteRenderer.material.HasProperty("_MakeSolidColor"))
             {
-                spriteRenderer.material.SetInt("MakeSolidColor", 0);
+                spriteRenderer.material.SetInt("_MakeSolidColor", 0);
             } else
             {
                 spriteRenderer.material.shader = originalShader;
