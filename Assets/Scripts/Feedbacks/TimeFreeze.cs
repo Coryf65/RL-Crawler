@@ -13,7 +13,10 @@ namespace Cory.RL_Crawler.Feedbacks
 
         public override void CompletePreviousFeedback()
         {
-            TimeController.instance.ResetTimeScale();
+            if (TimeController.instance != null)
+            {
+                TimeController.instance.ResetTimeScale();
+            }
         }
 
         public override void CreateFeedback()
