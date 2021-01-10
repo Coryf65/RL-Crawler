@@ -421,7 +421,7 @@ Transform:
   - {fileID: 5639773283173529740}
   - {fileID: 6832785044523129383}
   m_Father: {fileID: 7117075321412870433}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6513650670281125078
 MonoBehaviour:
@@ -608,6 +608,7 @@ Transform:
   - {fileID: 7117075323019151980}
   - {fileID: 7117075323255356723}
   - {fileID: 6426869829379210372}
+  - {fileID: 2970048856587049176}
   - {fileID: 4381169013412335793}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -700,6 +701,18 @@ MonoBehaviour:
       - m_Target: {fileID: 3921712065008633752}
         m_TargetAssemblyTypeName: Cory.RL_Crawler.Audio.EntitySounds, Assembly-CSharp
         m_MethodName: PlayHitSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6138071553585036982}
+        m_TargetAssemblyTypeName: Cory.RL_Crawler.Feedbacks.FeedbackPlayer, Assembly-CSharp
+        m_MethodName: PlayFeedback
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1087,7 +1100,7 @@ MonoBehaviour:
   - {x: -0.2903068, y: -0.4804001, z: 0}
   m_ShapePathHash: -971724827
   m_Mesh: {fileID: 0}
-  m_InstanceId: 21984
+  m_InstanceId: 22736
 --- !u!1 &7117075323255356720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,3 +1209,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b631e6ac10a0973408e076b30ee36e5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8752468882250007994
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2970048856587049176}
+  - component: {fileID: 7187814809075624962}
+  - component: {fileID: 6138071553585036982}
+  m_Layer: 8
+  m_Name: FeedbackHit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2970048856587049176
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8752468882250007994}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7117075321412870433}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7187814809075624962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8752468882250007994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b4428d201789234289c94781d08759d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 7117075323019151981}
+  flashTime: 0.1
+  flashMatrial: {fileID: 2100000, guid: 6442df0e157e06d4893b3d17c16d20d6, type: 2}
+--- !u!114 &6138071553585036982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8752468882250007994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69abfb6d1e75c2b4e94e30fceb0a1605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  feedbackToPlay:
+  - {fileID: 7187814809075624962}
