@@ -1,5 +1,53 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &746690245027571998
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2682054054545763446}
+  - component: {fileID: 8192649290573373593}
+  m_Layer: 0
+  m_Name: BulletCasingGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2682054054545763446
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746690245027571998}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8448799544394237515}
+  m_Father: {fileID: 5108059806194136926}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8192649290573373593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746690245027571998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaf9eb56cd71b574cb02756181537909, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 8448799545571195129}
+  poolSize: 50
+  inAirDuration: 0.3
+  inAirStrength: 1
 --- !u!1 &3752484739237297098
 GameObject:
   m_ObjectHideFlags: 0
@@ -1105,7 +1153,7 @@ MonoBehaviour:
   - {x: -0.31926528, y: 0.44646233, z: 0}
   m_ShapePathHash: -1928688415
   m_Mesh: {fileID: 0}
-  m_InstanceId: 39224
+  m_InstanceId: 51036
 --- !u!1 &5108059805727510207
 GameObject:
   m_ObjectHideFlags: 0
@@ -1381,6 +1429,7 @@ Transform:
   - {fileID: 5108059805904530495}
   - {fileID: 5108059804783924520}
   - {fileID: 7263694128773155020}
+  - {fileID: 2682054054545763446}
   m_Father: {fileID: 5108059805727510206}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1491,6 +1540,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8192649290573373593}
+        m_TargetAssemblyTypeName: Cory.RL_Crawler.Feedbacks.BulletShellGenerator,
+          Assembly-CSharp
+        m_MethodName: SpawnBulletShell
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   <OnShootNoAmmo>k__BackingField:
     m_PersistentCalls:
       m_Calls:
@@ -1506,3 +1568,70 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1001 &6370288400794005276
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2682054054545763446}
+    m_Modifications:
+    - target: {fileID: 3253822008584563028, guid: 2ee04a7e1999c2944ab40190de309822, type: 3}
+      propertyPath: m_Name
+      value: BulletShell
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253822008584563031, guid: 2ee04a7e1999c2944ab40190de309822, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253822008584563031, guid: 2ee04a7e1999c2944ab40190de309822, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253822008584563031, guid: 2ee04a7e1999c2944ab40190de309822, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253822008584563031, guid: 2ee04a7e1999c2944ab40190de309822, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253822008584563031, guid: 2ee04a7e1999c2944ab40190de309822, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253822008584563031, guid: 2ee04a7e1999c2944ab40190de309822, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253822008584563031, guid: 2ee04a7e1999c2944ab40190de309822, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253822008584563031, guid: 2ee04a7e1999c2944ab40190de309822, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253822008584563031, guid: 2ee04a7e1999c2944ab40190de309822, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253822008584563031, guid: 2ee04a7e1999c2944ab40190de309822, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253822008584563031, guid: 2ee04a7e1999c2944ab40190de309822, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2ee04a7e1999c2944ab40190de309822, type: 3}
+--- !u!4 &8448799544394237515 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3253822008584563031, guid: 2ee04a7e1999c2944ab40190de309822, type: 3}
+  m_PrefabInstance: {fileID: 6370288400794005276}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8448799545571195129 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3253822009563322341, guid: 2ee04a7e1999c2944ab40190de309822, type: 3}
+  m_PrefabInstance: {fileID: 6370288400794005276}
+  m_PrefabAsset: {fileID: 0}
