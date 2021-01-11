@@ -1,9 +1,11 @@
 using Cory.RL_Crawler.Interfaces;
 using Cory.RL_Crawler.UI;
+using Cory.RL_Crawler.ScriptableObjects;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Cory.RL_Crawler.Items;
 
 namespace Cory.RL_Crawler.Players
 {
@@ -26,6 +28,8 @@ namespace Cory.RL_Crawler.Players
 
         private bool dead = false;
 
+        private PlayerWeapon playerWeapon;
+
         [field: SerializeField]
         public Health_UI health_UI { get; set; }
 
@@ -33,6 +37,12 @@ namespace Cory.RL_Crawler.Players
         public UnityEvent OnDeath { get; set; }
         [field: SerializeField]
         public UnityEvent OnGetHit { get; set; }
+
+        private void Awake()
+        {
+            // the weapon is a child to our player
+            playerWeapon = GetComponentInChildren<PlayerWeapon>();
+        }
 
         private void Start()
         {
@@ -52,6 +62,45 @@ namespace Cory.RL_Crawler.Players
                     OnDeath?.Invoke();
                     dead = true;
                     // play death animation
+                }
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Pickups"))
+            {
+                Resource pickup = collision.gameObject.GetComponent<Resource>();
+
+                if (pickup != null)
+                {
+                    switch (pickup.ResourceData.ResourceType)
+                    {
+                        case ResourceType.Health:
+
+                            if (Health >= maxHealth)
+                            {
+                                return;
+                            } else
+                            {
+                                Health += pickup.ResourceData.GetAmount();
+                                pickup.PlayPickupSound();
+                            }
+                            break;
+                        case ResourceType.Ammo:
+
+                            if (playerWeapon.AmmoFull)
+                            {
+                                return;
+                            } else
+                            {
+                                playerWeapon.AddAmmo(pickup.ResourceData.GetAmount());
+                                pickup.PlayPickupSound();
+                            }
+                            break;
+                        default:
+                            break;
+                    }
                 }
             }
         }
