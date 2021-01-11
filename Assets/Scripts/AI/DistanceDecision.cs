@@ -7,8 +7,8 @@ namespace Cory.RL_Crawler.AI
     public class DistanceDecision : AI_Desicion
     {
         [field: SerializeField]
-        [field: Range(0.1f, 10)]
-        public float Distance { get; set; } = 5;
+        [field: Range(0.1f, 15)]
+        public float Distance { get; set; } = 10;
 
         public override bool MakeADescison()
         {
