@@ -1201,6 +1201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 0}
   weaponRenderer: {fileID: 0}
+  ammo_UI: {fileID: 0}
 --- !u!1 &5108059805904530464
 GameObject:
   m_ObjectHideFlags: 0
@@ -1569,6 +1570,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  <OnAmmoChanged>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &6370288400794005276
 PrefabInstance:
   m_ObjectHideFlags: 0

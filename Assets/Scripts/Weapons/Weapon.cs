@@ -20,7 +20,8 @@ namespace Cory.RL_Crawler.Weapons
             get => ammo;
             set 
             {
-                ammo = Mathf.Clamp(value, 0, weaponData.AmmoCapacity);            
+                ammo = Mathf.Clamp(value, 0, weaponData.AmmoCapacity);
+                OnAmmoChanged?.Invoke(ammo);
             } 
         }
 
@@ -31,6 +32,8 @@ namespace Cory.RL_Crawler.Weapons
         [SerializeField] protected bool reloadCoroutine = false;
         [field: SerializeField] public UnityEvent OnShoot { get; set; }
         [field: SerializeField] public UnityEvent OnShootNoAmmo { get; set; }
+        [field: SerializeField] public UnityEvent<int> OnAmmoChanged { get; set; }
+
 
         private void Start()
         {
