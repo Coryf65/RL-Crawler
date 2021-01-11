@@ -496,7 +496,7 @@ Transform:
   - {fileID: 5639773283173529740}
   - {fileID: 6832785044523129383}
   m_Father: {fileID: 7117075321412870433}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6513650670281125078
 MonoBehaviour:
@@ -527,6 +527,55 @@ MonoBehaviour:
   <Attack>k__BackingField: 0
   <TargetSpotted>k__BackingField: 0
   <Arrived>k__BackingField: 0
+--- !u!1 &4417591117151122499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1549631300397401583}
+  - component: {fileID: 1002886673823048492}
+  m_Layer: 8
+  m_Name: ItemDropper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1549631300397401583
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4417591117151122499}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7117075321412870433}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1002886673823048492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4417591117151122499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680a100a59327a244a4fddbf1f88fbd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemsToDrop:
+  - rate: 0.8
+    itemPrefab: {fileID: 7765498473538381222, guid: 91930de3359e2874bbd198c9cdd98a5f, type: 3}
+  - rate: 0.2
+    itemPrefab: {fileID: 5588353371051814030, guid: 7efefc3e210d4974d9b44fe2966f2c52, type: 3}
+  dropChance: 0.5
 --- !u!1 &4582446577517946257
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,7 +760,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7117075321412870436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.8, y: 2.99, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7117075323019151980}
@@ -719,6 +768,7 @@ Transform:
   - {fileID: 6426869829379210372}
   - {fileID: 2970048856587049176}
   - {fileID: 3621779649663805439}
+  - {fileID: 1549631300397401583}
   - {fileID: 4381169013412335793}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -862,6 +912,18 @@ MonoBehaviour:
       - m_Target: {fileID: 3641729506553934323}
         m_TargetAssemblyTypeName: Cory.RL_Crawler.Feedbacks.FeedbackPlayer, Assembly-CSharp
         m_MethodName: PlayFeedback
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1002886673823048492}
+        m_TargetAssemblyTypeName: Cory.RL_Crawler.Items.LootDrop, Assembly-CSharp
+        m_MethodName: DropItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1222,7 +1284,7 @@ MonoBehaviour:
   - {x: -0.2903068, y: -0.4804001, z: 0}
   m_ShapePathHash: -971724827
   m_Mesh: {fileID: 0}
-  m_InstanceId: 56206
+  m_InstanceId: 60064
 --- !u!1 &7117075323255356720
 GameObject:
   m_ObjectHideFlags: 0
