@@ -10,8 +10,9 @@ Similar to : Enter The Gungeon, or Binding of Issac
 - Twin stick shooter style
 - Enemies spawn from rooms
 
-## Techincal Notes
+## Technical Notes
 
+- simple rogue-like dungeon game to build a micro game that has all the base features.
 
 ## Art Credits
 
